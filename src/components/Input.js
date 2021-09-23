@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import Dollar from ".././assets/icon-dollar.svg";
+import UserIcon from "../assets/icon-person.svg";
 
 const InputArea = styled.section`
   height: 85%;
   width: 45%;
   background-color: white;
   border-radius: 2rem;
+  @media (max-width: 600px) {
+    min-width: 75%;
+    padding: 3rem;
+  }
 `;
 
 const Heading = styled.text`
@@ -12,7 +18,17 @@ const Heading = styled.text`
   font-weight: bold;
   color: var(--dark-gray-cyan);
 `;
-
+const InputWrapper = styled.section`
+  display: flex;
+  width: 100%;
+  img {
+    width: 1.3rem;
+    height: 1.6rem;
+    position: absolute;
+    margin-top: 1.7rem;
+    padding-left: 1.5rem;
+  }
+`;
 const BillInput = styled.input`
   width: 100%;
   height: 4rem;
@@ -50,6 +66,7 @@ const BillInput = styled.input`
 
 const TipSelect = styled.section`
   margin-top: 1rem;
+  margin-bottom: 4.5rem;
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 0.5fr;
   grid-row-gap: 0.1rem;
@@ -110,7 +127,10 @@ const Input = () => {
   return (
     <InputArea>
       <Heading>Bill</Heading>
-      <BillInput type="number" placeholder="$" />
+      <InputWrapper>
+        <img src={Dollar} alt="dollar sign icon"></img>
+        <BillInput type="number" />
+      </InputWrapper>
       <Heading>Select Tip %</Heading>
       <TipSelect>
         <TipButton>5%</TipButton>
@@ -120,6 +140,13 @@ const Input = () => {
         <TipButton>50%</TipButton>
         <CustomButton type="number" placeholder="Custom"></CustomButton>
       </TipSelect>
+
+      <Heading>Number of People</Heading>
+      <InputWrapper>
+        <img src={UserIcon} alt="dollar sign icon"></img>
+
+        <BillInput type="number" />
+      </InputWrapper>
     </InputArea>
   );
 };

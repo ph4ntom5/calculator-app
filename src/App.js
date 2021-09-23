@@ -11,6 +11,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    padding-top: 21rem;
+    margin-bottom: 5rem;
+    height: 100vh;
+  }
 `;
 
 function App() {

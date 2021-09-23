@@ -8,6 +8,11 @@ const Screen = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 600px) {
+    min-width: 75%;
+    padding: 3rem;
+    margin-bottom: 6rem;
+  }
 `;
 
 const Button = styled.button`
@@ -23,6 +28,10 @@ const Button = styled.button`
   font-family: "Space Mono";
   font-size: 2.4rem;
   transition: 0.4s;
+
+  @media (max-width: 600px) {
+    margin-top: 6rem;
+  }
 
   &:hover {
     background-color: var(--bg);

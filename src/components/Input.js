@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Dollar from ".././assets/icon-dollar.svg";
 import UserIcon from "../assets/icon-person.svg";
+import { useState, useRef } from "react";
 
 const InputArea = styled.section`
   height: 85%;
@@ -60,7 +61,8 @@ const BillInput = styled.input`
     font-size: 2.4rem;
     color: var(--dark2-gray-cyan);
     opacity: 0.6;
-    text-align: left;
+    text-align: right;
+    padding-right: 2rem;
   }
 `;
 
@@ -124,12 +126,22 @@ const CustomButton = styled.input`
 `;
 
 const Input = () => {
+  const [data, setData] = useState(0);
+  const getToPay1 = useRef(0);
+  const getValue = (val) => {
+    setData(val.target.value);
+  };
   return (
     <InputArea>
       <Heading>Bill</Heading>
       <InputWrapper>
         <img src={Dollar} alt="dollar sign icon"></img>
-        <BillInput type="number" />
+        <BillInput
+          id="topay1"
+          onChange={getValue}
+          type="number"
+          placeholder={"00.00"}
+        />
       </InputWrapper>
       <Heading>Select Tip %</Heading>
       <TipSelect>

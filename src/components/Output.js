@@ -82,7 +82,7 @@ const Output = () => {
           Total
           <p>/ person</p>
         </span>
-        <Result>$32.79</Result>
+        <Result></Result>
       </Amount>
       <Button>RESET</Button>
     </Screen>
